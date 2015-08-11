@@ -6,15 +6,15 @@ describe(Task) do
 
   describe('#add') do
     it('will add a new task to our class') do
-      test_task = Task.new("Task1")
-      test_task.add()
-      expect(Task.all()).to(eq(["Task1"]))
+      test_task = Task.new()
+      test_task.add("Task1")
+      expect(Task.all()).to include("Task1")
     end
 
      it('will add a second task and return 2 elements in array') do
-       @@test_task2 = Task.new("Task2")
-       @@test_task2.add()
-      expect(Task.all()).to(eq(["Task1","Task2"]))
+       @@test_task2 = Task.new()
+       @@test_task2.add("Task2")
+      expect(Task.all()).to include("Task2")
      end
    end
 
@@ -28,8 +28,9 @@ describe(Task) do
   describe('#remove') do
     it('will remove a task from the list') do
         @@test_task2.remove()
-        expect(Task.all()).to(eq(["Task1"]))
+        expect(Task.all()).to include("Task1")
     end
+  end
 
   describe('.clear') do
     it("will clear the entire list") do
@@ -45,4 +46,3 @@ describe(Task) do
   end
 
 end  #end Task
-end  #end class

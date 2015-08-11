@@ -1,11 +1,11 @@
 class Task
 @@tasks = []
 
-  define_method(:initialize) do |task|
-    @descr = task
+  define_method(:initialize) do
   end
 
-  define_method(:add) do
+  define_method(:add) do |task_descr|
+    @descr = task_descr
     @@tasks.push(@descr)
   end
 
@@ -27,7 +27,6 @@ class Task
 
   define_singleton_method(:count) do
     @@tasks.length()
-
    end
 
 end
